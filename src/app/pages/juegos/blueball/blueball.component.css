@@ -1,0 +1,80 @@
+.contenedor{
+    padding: 0px;
+    margin: auto;
+    width: 600px;
+    height: 500px;
+    background-color: rgb(198, 255, 187);
+    border: 10px outset rgb(68, 170, 68);
+    position: relative;
+}
+
+.puntaje{
+    background-color: #444;
+    height: 100px;
+    width: 600px;
+    margin-top: 30px;
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    padding: 10px 0px;
+ }
+
+ #jugador{
+    background-color: #3498db;
+    border: 4px outset rgb(34, 118, 187);
+    width: 25px;
+    height: 25px;
+    border-radius: 25px;
+    transition: all 0.3s;
+}
+
+.buttons{
+    padding: 10px 0;
+    text-align: center;
+}
+
+.contenedor #enemigo{
+    background-color: rgb(153, 36, 0);
+    background-image: url("../../../../assets/images/blueball/demonio.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 4px outset rgb(187, 77, 34);
+    width: 36px;
+    height: 36px;
+    border-radius: 25px;
+    display: block;
+    position: absolute;
+
+    -webkit-animation: moveX 1.05s linear 0s infinite alternate, moveY 1.4s linear 0s infinite alternate;
+    -moz-animation: moveX 1.05s linear 0s infinite alternate, moveY 1.4s linear 0s infinite alternate;
+    -o-animation: moveX 1.05s linear 0s infinite alternate, moveY 1.4s linear 0s infinite alternate;
+    animation: moveX 1.05s linear 0s infinite alternate, moveY 1.4s linear 0s infinite alternate;
+
+    animation-play-state: running;
+
+}
+
+@-webkit-keyframes moveX {
+    from { left: 0; } to { left: 550px; }
+}
+@-moz-keyframes moveX {
+    from { left: 0; } to { left: 550px; }
+}
+@-o-keyframes moveX {
+    from { left: 0; } to { left: 550px; }
+}
+@keyframes moveX {
+    from { left: 0; } to { left: 550px; }
+}
+@-webkit-keyframes moveY {
+    from { top: 0; } to { top: 450px; }
+}
+@-moz-keyframes moveY {
+    from { top: 0; } to { top: 450px; }
+}
+@-o-keyframes moveY {
+    from { top: 0; } to { top: 450px; }
+}
+@keyframes moveY {
+    from { top: 0; } to { top: 450px; }
+}

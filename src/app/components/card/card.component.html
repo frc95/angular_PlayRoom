@@ -1,0 +1,63 @@
+<div class="card bg-light sm" style="width: 25rem;">
+    <img [src]="urlImage" height="300" width="300" class="card-img-top p-4" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">{{titulo}}</h5>
+        <div class="d-flex justify-content-between">
+            <a routerLink="{{ruta}}" class="btn btn-success">Jugar</a>
+            <button type="button" class="btn btn-info text-light" data-bs-toggle="modal" [attr.data-bs-target]="'#'+titulo" *ngIf="titulo != 'Piedra Papel o Tijeras'">
+                Ver resultados
+            </button>
+        </div>
+
+
+        <div class="modal fade" [attr.id]="titulo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Resultados</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <table class="table" *ngIf="titulo == 'TaTeTi'">
+                        <thead>
+                          <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Jugador</th>
+                            <th scope="col">Puntos</th>
+                          </tr>
+                        </thead>
+                        <tbody *ngFor="let resultado of arrResultados">
+                          <tr>
+                            <th scope="row">{{resultado.id}}</th>
+                            <td>{{resultado.name}}</td>
+                            <td>{{resultado.score}}</td>
+                          </tr>
+                        </tbody>
+                    </table>
+                    <table class="table" *ngIf="titulo != 'TaTeTi'">
+                      <thead>
+                        <tr>
+                          <th scope="col">ID</th>
+                          <th scope="col">Jugador</th>
+                          <th scope="col">Tiempo</th>
+                        </tr>
+                      </thead>
+                      <tbody *ngFor="let resultado of arrResultados">
+                        <tr>
+                          <th scope="row">{{resultado.id}}</th>
+                          <td>{{resultado.name}}</td>
+                          <td>{{resultado.time | minuteSeconds}}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+              </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>

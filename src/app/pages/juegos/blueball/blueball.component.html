@@ -1,0 +1,18 @@
+<app-back></app-back>
+<div class="contenedor puntaje" id="puntos">
+    <span><b>Puntos : {{puntos}} / {{puntosParaGanar}}</b></span>
+    <span id="ned"></span>
+    <span id="tiempo"><b>&nbsp;&nbsp;&nbsp;Tiempo : {{display}}</b></span>
+    <br>
+    <span>{{mensaje}}</span>
+</div>
+
+<div class="contenedor">
+    <div id="jugador" (mouseover)="sumarPuntos()" [ngStyle]="{'margin-top.px': mtop, 'margin-left.px': mleft, 'pointer-events': pointerEvent}"></div>
+    <div id="enemigo" (mouseover)="perdiste()" [ngStyle]="{'animation-play-state': animationState, 'pointer-events': pointerEvent}"></div>
+</div>
+
+<div class="buttons">
+    <button (click)="guardar()" [disabled]="disabled" class="btn btn-info mb-4 text-light me-4" type="button" style="height: 50px; width: 150px;">Guardar</button>
+    <button (click)="reiniciar()" class="btn btn-danger mb-4" type="button" style="height: 50px; width: 150px;">Reiniciar</button>
+</div>

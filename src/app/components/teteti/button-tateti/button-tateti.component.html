@@ -1,0 +1,4 @@
+<div class="card" (click)="select()" [ngStyle]="{'pointer-events': pointerEvent}">
+    <img *ngIf="ocupado && !botOcupado" class="front" [src]="imgX" alt="card front" />
+    <img *ngIf="ocupado && botOcupado" class="front" [src]="imgO" alt="card front" />
+</div>

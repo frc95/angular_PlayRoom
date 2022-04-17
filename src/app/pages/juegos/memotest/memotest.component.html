@@ -1,0 +1,23 @@
+<app-back></app-back>
+<div class="container text-center">
+    <p class="h1 text-light">{{textinfo}}</p>
+</div>
+<div class="container text-center">
+    <p class="h1 text-light">{{display}}</p>
+</div>
+<div class="d-flex justify-content-center">
+    <div class="card-grid">
+        <app-card-memo 
+        *ngFor="let card of cards" 
+        [img]="card.image"
+        [matched]="card.matched"
+        [id]="card.id"
+        [pointerEvent]="card.pointerEvent"
+        (setMatched)="selectCard($event)"></app-card-memo>
+    </div>
+</div>
+
+<div class="d-flex justify-content-center mt-4">
+    <button (click)="guardar()" [disabled]="disabled" class="btn btn-info mb-4 text-light me-4" type="button" style="height: 50px; width: 150px;">Guardar</button>
+    <button (click)="reiniciar()" class="btn btn-danger mb-4" type="button" style="height: 50px; width: 150px;">Reiniciar</button>
+</div>

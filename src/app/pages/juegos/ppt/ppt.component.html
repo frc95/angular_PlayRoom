@@ -1,0 +1,38 @@
+<app-back></app-back>
+<div class="container">
+    <div class="row">
+        <div class="scoreBoard">
+            <div id="user-label" class="badgePlayer">Jugador</div>
+            <div id="computer-label" class="badgePlayer">Maquina</div>
+            <span class="text-light">{{puntosJugador}}</span>:<span class="text-light">{{puntosMaquina}}</span>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-12 d-flex justify-content-center">
+            <p class="h1 text-light">{{resultadoText}}</p>
+        </div>
+    </div>
+    <div class="row mt-4" *ngIf = "!resultado">
+        <div class="col-4 d-flex justify-content-center">            
+            <img class="borderItem rounded-circle" (click)="opcion(0)" [src]="imgPiedra" width="200" height="200"> 
+        </div>
+        <div class="col-4 d-flex justify-content-center">
+            <img class="borderItem rounded-circle" (click)="opcion(1)" [src]="imgPapel" width="200" height="200">
+        </div>
+        <div class="col-4 d-flex justify-content-center">
+            <img class="borderItem rounded-circle" (click)="opcion(2)" [src]="imgTijera" width="200" height="200">
+        </div>
+    </div>
+
+    <div class="row mt-4" *ngIf = "resultado">
+        <div class="col-4 d-flex justify-content-center">            
+            <img class="borderItem rounded-circle" [src]="imgJugador" width="200" height="200"> 
+        </div>
+        <div class="col-4 d-flex justify-content-center">
+            <button (click)="reiniciar()" class="btn btn-danger mb-4" type="button" style="height: 50px; width: 150px;">Denuevo</button>
+        </div>
+        <div class="col-4 d-flex justify-content-center">
+            <img class="borderItem rounded-circle" [src]="imgMaquina" width="200" height="200">
+        </div>
+    </div>
+</div>
